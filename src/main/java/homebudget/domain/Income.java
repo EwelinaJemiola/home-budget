@@ -1,13 +1,17 @@
 package homebudget.domain;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
-@Entity
+//@Entity
 public class Income {
 
+   // @Id
+   // @GeneratedValue
     private Long id;
 
     private boolean delete;
@@ -25,8 +29,7 @@ public class Income {
     public Income() {
     }
 
-    public Income(Long id, boolean delete, LocalDateTime creationDataTime, LocalDate incomeDate, BigDecimal incomeAmount, IncomeSource incomeSource, String title) {
-        this.id = id;
+    public Income(boolean delete, LocalDateTime creationDataTime, LocalDate incomeDate, BigDecimal incomeAmount, IncomeSource incomeSource, String title) {
         this.delete = delete;
         this.creationDataTime = creationDataTime;
         this.incomeDate = incomeDate;

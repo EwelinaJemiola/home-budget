@@ -3,13 +3,17 @@ package homebudget.domain;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
-@Entity
+//@Entity
 public class Expense {
 
+    //@Id
+    //@GeneratedValue
     private Long id;
 
     private ExpenseCategory category;
@@ -33,8 +37,7 @@ public class Expense {
         //empty
     }
 
-    public Expense(Long id, ExpenseCategory category, BigDecimal expenseAmount, String expensePlace, PaymentMethod method, String expenseTitle, boolean deleted, LocalDate expenseDate, LocalDateTime creationDateTime) {
-        this.id = id;
+    public Expense(ExpenseCategory category, BigDecimal expenseAmount, String expensePlace, PaymentMethod method, String expenseTitle, boolean deleted, LocalDate expenseDate, LocalDateTime creationDateTime) {
         this.category = category;
         this.expenseAmount = expenseAmount;
         this.expensePlace = expensePlace;
